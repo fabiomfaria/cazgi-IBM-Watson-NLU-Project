@@ -49,9 +49,9 @@ class App extends React.Component {
         let output = data.label;
         let color = "white"
         switch(output) {
-          case "positive": color = "black";break;
-          case "negative": color = "black";break;
-          default: color = "black";
+          case "positive": color = "green";break;
+          case "negative": color = "red";break;
+          default: color = "yellow";
         }
         output = <div style={{color:color,fontSize:20}}>{output}</div>
         this.setState({sentimentOutput:output});
@@ -74,17 +74,17 @@ class App extends React.Component {
 
   render() {
     return (  
-      <div className="App">
-      <button className="btn btn-info" onClick={()=>{this.renderOutput('text')}}>Text</button>
-        <button className="btn btn-dark"  onClick={()=>{this.renderOutput('url')}}>URL</button>
-        <br/><br/>
+      <><title> Sentiment Analyzer </title><div className="App">
+        <button className="btn btn-info" onClick={() => { this.renderOutput('text'); } }>Text</button>
+        <button className="btn btn-dark" onClick={() => { this.renderOutput('url'); } }>URL</button>
+        <br /><br />
         {this.state.innercomp}
-        <br/>
+        <br />
         <button className="btn-primary" onClick={this.sendForSentimentAnalysis}>Analyze Sentiment</button>
         <button className="btn-primary" onClick={this.sendForEmotionAnalysis}>Analyze Emotion</button>
-        <br/>
-            {this.state.sentimentOutput}
-      </div>
+        <br />
+        {this.state.sentimentOutput}
+      </div></>
     );
     }
 }
