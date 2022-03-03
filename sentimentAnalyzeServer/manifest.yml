@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 applications:
 - path: .
@@ -5,3 +6,12 @@ applications:
   memory: 256M
   instances: 1
   random-route: true
+=======
+---
+applications:
+- path: .
+  name: fabio-ofcd-sentiment-analyzer #change to be unique in IBM Cloud
+  memory: 256M
+  instances: 1
+  random-route: true
+>>>>>>> b3864c8ec6d77e367035433a4597969a57d8d2ef
